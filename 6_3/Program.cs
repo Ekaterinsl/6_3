@@ -6,6 +6,11 @@ namespace _6_3
 {
     internal class Program
     {
+if (!File.Exists("rabs.csv"))
+            {
+                File.Create("rabs.csv").Close();
+                Console.WriteLine("Файл создан");
+            }
         static void Main(string[] args)
         {
             ConsoleKeyInfo Key;
@@ -32,12 +37,8 @@ namespace _6_3
         }
         static void Input()
         {
-            if (!File.Exists(@"e:\rabs.csv"))
-            {
-                File.Create(@"e:\rabs.csv").Close();
-                Console.WriteLine("Файл создан");
-            }
-            using (StreamWriter sw = new StreamWriter(@"e:\rabs.csv", true, Encoding.Unicode))
+            
+            using (StreamWriter sw = new StreamWriter("rabs.csv", true, Encoding.Unicode))
             {
                 char Key = 'y';
                 do
@@ -65,7 +66,7 @@ namespace _6_3
         }
         static void Print()
         {
-            using (StreamReader sr = new StreamReader(@"e:\rabs.csv", Encoding.Unicode))
+            using (StreamReader sr = new StreamReader("rabs.csv", Encoding.Unicode))
             {
                 string line;
                 Console.WriteLine($"{"ID",5}{"Дата и время",20}{"ФИО",15}{"Возраст",15}{"Рост",15}{"Дата рождения",15}{"Место рождения",20}");
