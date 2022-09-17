@@ -46,20 +46,28 @@ if (!File.Exists("rabs.csv"))
                     string file = string.Empty;
                     Console.Write("\nВведите ID:  ");
                     file += $"{Console.ReadLine()}\t";
+                    
                     string now = DateTime.Now.ToString();
                     Console.Write($"Дата и время добавления записи: {now} ");
                     file += $"{now}\t";
+                    
                     Console.Write("\nВведите ФИО:   ");
                     file += $"{Console.ReadLine()}\t";
+                    
                     Console.Write("\nВведите возраст:   ");
                     file += $"{Console.ReadLine()}\t";
+                    
                     Console.Write("\nВведите рост:   ");
                     file += $"{Console.ReadLine()}\t";
+                    
                     Console.Write("\nВведите дату рождения:   ");
                     file += $"{Console.ReadLine()}\t";
+                    
                     Console.Write("\nВведите место рождения:   ");
                     file += $"{Console.ReadLine()}\t";
+                    
                     sw.WriteLine(file);
+                    
                     Console.Write("Продолжить n/y"); Key = Console.ReadKey(true).KeyChar;
                 } while (char.ToLower(Key) == 'y');
             }
