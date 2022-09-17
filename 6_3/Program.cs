@@ -20,6 +20,7 @@ if (!File.Exists("rabs.csv"))
                 Console.WriteLine("Введите 2 - чтобы заполнить данные");
                 Key = Console.ReadKey();
                 Console.WriteLine();
+              
                 switch (Key.KeyChar)
                 {
                     case '1':
@@ -35,9 +36,9 @@ if (!File.Exists("rabs.csv"))
             }
             while (Key.Key != ConsoleKey.Escape);
         }
+      
         static void Input()
         {
-            
             using (StreamWriter sw = new StreamWriter("rabs.csv", true, Encoding.Unicode))
             {
                 char Key = 'y';
@@ -72,6 +73,7 @@ if (!File.Exists("rabs.csv"))
                 } while (char.ToLower(Key) == 'y');
             }
         }
+        
         static void Print()
         {
             using (StreamReader sr = new StreamReader("rabs.csv", Encoding.Unicode))
